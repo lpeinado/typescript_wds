@@ -1,11 +1,14 @@
-import './style.css'
-function summ(s){
-  console.log("hei");
-}
-console.log("rus");
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    Hi man
-  </div>
-`
+import _ from 'lodash';
 
+
+
+let a = 'ras que te ras';
+const b = a.charAt(1);
+console.log("B", b);
+
+if(_.isNil(b)=== true) {
+  console.log("B is nil", b);
+}
+else {
+  console.log("B is not nil", b);
+}
