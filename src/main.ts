@@ -1,10 +1,23 @@
-const a = [1, 2, 3];
+type Address = {
+  street: string;
+  city: string;
+  country: string;
+};
 
-a.push(4);
-a.push('rasque teras');
+interface Person {
+  firstName: string;
+  lastName: string;
+  age: number;
+  isProgrammer?: boolean;
+  address?: Address;
+};
 
-const dateArray: Date[] = [];
-dateArray.push(new Date());
+const persona: Person = {
+  firstName: 'Joan',
+  lastName: 'Peris',
+  age: 25,
+}
 
-// JS data types by value number, string, null, undefined, boolean
-// JS data types by reference object, array, function (which all of them are objects)
+persona.age = 26;
+persona.isProgrammer = true;
+console.log("PERSONA", persona);
