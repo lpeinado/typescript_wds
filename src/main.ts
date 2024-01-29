@@ -12,12 +12,25 @@ interface Person {
   address?: Address;
 };
 
-const persona: Person = {
-  firstName: 'Joan',
-  lastName: 'Peris',
-  age: 25,
+function logPerson(per:Person){
+  console.log(per.firstName);
 }
-
-persona.age = 26;
-persona.isProgrammer = true;
-console.log("PERSONA", persona);
+const lluis = {
+  firstName: 'Lluis',
+  lastName: 'Peinado',
+  age: 25,
+  isProgrammer: true,
+  address: {
+    street: 'Rosselló',
+    city: 'Barcelona',
+    country: 'Catalonia'
+  }
+};
+const a = logPerson(lluis);
+// curius thing here from lesson
+function printPerson(person: {name:string}){
+  console.log(person.name);
+}
+printPerson({name: 'Lluisa doesn work with age explicit', age: 25}); // this fails
+const pers = {name: 'LluisaObject works with age', age: 25};
+printPerson(pers); // this works
