@@ -27,8 +27,8 @@ const lluis = {
   }
 };
 const a = logPerson(lluis);
-// curius thing here from lesson
-function printPerson(person: {name:string}){
+// curious thing here from lesson
+function printPerson(person: {name:string}):void{
   console.log(person.name);
 }
 printPerson({name: 'Lluisa doesn work with age explicit', age: 25}); // this fails
