@@ -1,5 +1,6 @@
-function printNameAndAge(name?: string, age: number) {
-    console.log(name + " is " + age + " years old");
+function sum(...nums: number[]) { // type is always an array with the rest operator
+  return nums.reduce((a, b) => a + b, 0)
 }
-printNameAndAge("John", 30);
-printNameAndAge({age:90});
+
+const a = sum(8, 10, 12);
+console.log(a); // 30
