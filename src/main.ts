@@ -1,27 +1,41 @@
-function sumWithCallback(a:number, b:number, callback: Function){
-  callback(a+b);
+type Person = {
+  name: string
+  age: number
+};
+type PersonWithId = Person & { id: number };
+
+const person: Person = {
+  name: 'John',
+  age: 30,
+};
+
+const personWithId: PersonWithId = {
+ ...person,
+  id: 1,
+};
+
+type FamiliarAnimal = {
+  name: string
+  age: number
+  type: 'dog' | 'cat'
+};
+
+const rus : FamiliarAnimal = {
+  name: 'Rus',
+  age: 1,
+  type: 'cat',
+};
+
+interface PersonInterface {
+  name: string
+  age: number
 }
 
-sumWithCallback(1,2, (sum:Function) => {
-  console.log(sum);  // 3
-});
-
-function sumWithPromise(a:number, b:number): Promise<number>{
-  return new Promise((resolve) => {
-    const c:number = a+b;
-    resolve(c);
-  });
+interface PersonWithIdInterface extends PersonInterface {
+  id: number
 }
 
-const myNiceType:Promise<number> = sumWithPromise(1,2);
-console.log(myNiceType);
-myNiceType.then((sum) => {
-  console.log(sum);  // 3
-});
-
-type functionType= (a:number, b:number) => number;
-function sumWithAnothersumWithin(a:number, b:number, sum: functionType){
-  return sum(a, b);
-}
-const ras = sumWithAnothersumWithin(1,2, (a,b) => a+b);
-console.log(ras); // 3
+const newPerson: PersonWithIdInterface = {
+ ...person,
+  id: 1,
+};
