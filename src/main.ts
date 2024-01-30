@@ -1,6 +1,27 @@
-function sum(...nums: number[]) { // type is always an array with the rest operator
-  return nums.reduce((a, b) => a + b, 0)
+function sumWithCallback(a:number, b:number, callback: Function){
+  callback(a+b);
 }
 
-const a = sum(8, 10, 12);
-console.log(a); // 30
+sumWithCallback(1,2, (sum:Function) => {
+  console.log(sum);  // 3
+});
+
+function sumWithPromise(a:number, b:number): Promise<number>{
+  return new Promise((resolve) => {
+    const c:number = a+b;
+    resolve(c);
+  });
+}
+
+const myNiceType:Promise<number> = sumWithPromise(1,2);
+console.log(myNiceType);
+myNiceType.then((sum) => {
+  console.log(sum);  // 3
+});
+
+type functionType= (a:number, b:number) => number;
+function sumWithAnothersumWithin(a:number, b:number, sum: functionType){
+  return sum(a, b);
+}
+const ras = sumWithAnothersumWithin(1,2, (a,b) => a+b);
+console.log(ras); // 3
