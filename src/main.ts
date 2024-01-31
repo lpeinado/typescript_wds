@@ -1,15 +1,14 @@
-interface User {
-  name: string
-  age: number
-  email: string
-};
-type UserKeys = keyof User;
-
-const myKey:UserKeys = 'age';
-
-function getValue(user:User, key:UserKeys){
-  return user[key];
+function sayHello(name: string) {
+  return (`Hello, ${name}!`)
 }
 
-console.log(getValue({name: 'Bob', age: 25, email: '<EMAIL>'}, 'age')); // 25
-console.log(getValue({name: 'Bob', age: 25, email: '<EMAIL>'}, 'email')); // email
+type Greeting = typeof sayHello;
+
+function sayHellow2(name1:string, name2:string, glueFunc: Greeting) {
+  const res = glueFunc(name1);
+  const res2 = glueFunc(name2);
+  const total = res + res2;
+  console.log(total);
+};
+
+sayHellow2("John", "Jane", sayHello);
