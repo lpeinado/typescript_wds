@@ -1,16 +1,15 @@
-interface Person {
-  readonly id: number,
-  name: string,
-  age: number,
-}
-const person: Person = {
-  id: 1,
-  name: 'John',
-  age: 30,
+interface User {
+  name: string
+  age: number
+  email: string
 };
-person.id = 6 //doesn't work
+type UserKeys = keyof User;
 
-type numsArray = readonly number[];
-const nums: numsArray = [1, 2, 3];
-nums.push(4); //doesn't work
-nums[0] = 6; //doesn't work
+const myKey:UserKeys = 'age';
+
+function getValue(user:User, key:UserKeys){
+  return user[key];
+}
+
+console.log(getValue({name: 'Bob', age: 25, email: '<EMAIL>'}, 'age')); // 25
+console.log(getValue({name: 'Bob', age: 25, email: '<EMAIL>'}, 'email')); // email
