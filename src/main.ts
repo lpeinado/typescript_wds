@@ -1,14 +1,11 @@
-function sayHello(name: string) {
-  return (`Hello, ${name}!`)
+type Person = {
+  name: string
+  skillLevel: 'Beginner'| 'Intermediate'| 'Advanced' | 'Expert'
 }
-
-type Greeting = typeof sayHello;
-
-function sayHellow2(name1:string, name2:string, glueFunc: Greeting) {
-  const res = glueFunc(name1);
-  const res2 = glueFunc(name2);
-  const total = res + res2;
-  console.log(total);
-};
-
-sayHellow2("John", "Jane", sayHello);
+const me : Person = {
+  name: 'Lluís',
+  skillLevel: 'Advanced'
+}
+function printLevel(level:Person['skillLevel']){
+  console.log(level);
+}
