@@ -9,3 +9,21 @@ const me : Person = {
 function printLevel(level:Person['skillLevel']){
   console.log(level);
 }
+type ras = {
+  a: number
+  b: number
+}
+const a: ras = {
+  a: 1,
+  b: 2
+}
+type PeopleBySkill = {
+  [level in Person['skillLevel']]: Person[]
+}
+
+const b:PeopleBySkill = {
+  Beginner: [me, me],
+  Intermediate: [],
+  Advanced: [me],
+  Expert: []
+}
