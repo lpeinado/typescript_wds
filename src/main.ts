@@ -7,7 +7,9 @@ type Person = {
   name: string,
   age: number,
 }
-const a: APIResponse<Person> = {
+type UserData = APIResponse<Person>
+
+const a: UserData = {
   data: {
     name: 'Lluís',
     age: 34
