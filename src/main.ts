@@ -1,25 +1,16 @@
-type APIResponse<T> = {
+type APIResponse<T extends object> = {
   data: T;
   error?: boolean;
   message?: string;
 }
-type Person = {
-  name: string,
-  age: number,
-}
-type UserData = APIResponse<Person>
-type BlogResponse = APIResponse<{title: string, pages: number}>
 
-const a: UserData = {
-  data: {
-    name: 'Lluís',
-    age: 34
-  },
+type User = {
+  name: string;
+  age: number;
 }
-
-const b: BlogResponse = {
+const a:APIResponse<User> = {
   data: {
-    title: 'My blog',
-    pages: 100,
-  },
+    name: 'John',
+    age: 23
+  }
 }
