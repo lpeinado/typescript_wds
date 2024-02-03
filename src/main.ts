@@ -1,12 +1,15 @@
-type Dictionary<T>= { [key: string]: T };
-
-const myDic: Dictionary<string> = {
-    name: 'Jack',
-    age: '20',
-    ras: '100',
-    ris: 'catapum',
-    3:'tras',
-    rasc: '100'
+type APIResponse<T> = {
+  data: T;
+  error?: boolean;
+  message?: string;
 }
-
-
+type Person = {
+  name: string,
+  age: number,
+}
+const a: APIResponse<Person> = {
+  data: {
+    name: 'Lluís',
+    age: 34
+  },
+}
