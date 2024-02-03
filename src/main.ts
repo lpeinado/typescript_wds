@@ -1,16 +1,17 @@
-type APIResponse<T extends object> = {
-  data: T;
-  error?: boolean;
-  message?: string;
+function arrToObj<T>(array:[string, T][]) {
+  let res: {[index: string]: T} = {};
+  array.forEach(([key, value])=>{
+    res[key] = value;
+  })
+  return res;
 }
 
-type User = {
-  name: string;
-  age: number;
-}
-const a:APIResponse<User> = {
-  data: {
-    name: 'John',
-    age: 23
-  }
-}
+
+const input:[string, number | boolean][] = [
+  ['name', 80], 
+  ['age', 40],
+  ['isHandsome', true]
+];
+
+const a = arrToObj(input);
+console.log(a);
