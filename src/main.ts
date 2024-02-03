@@ -1,12 +1,12 @@
-function returnSecond<T>(array:T[]){
-  return array[1]
+type Dictionary<T>= { [key: string]: T };
+
+const myDic: Dictionary<string> = {
+    name: 'Jack',
+    age: '20',
+    ras: '100',
+    ris: 'catapum',
+    3:'tras',
+    rasc: '100'
 }
-const numArr = [1, 2, 3, 4, 5]
-const strArr = ['a', 'b', 'c', 'd', 'e']
-const boolArr = [true, false, true, false, true]
 
-const resA = returnSecond(numArr)
-const resB = returnSecond(strArr)
-const resC = returnSecond(boolArr)
 
-console.log(resA, resB, resC)
