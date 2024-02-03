@@ -6,6 +6,10 @@ const me : Person = {
   name: 'Lluís',
   skillLevel: 'Advanced'
 }
+const you: Person = {
+  name: 'Lluís',
+  skillLevel: 'Advanced',
+}
 function printLevel(level:Person['skillLevel']){
   console.log(level);
 }
@@ -25,5 +29,5 @@ const b:PeopleBySkill = {
   Beginner: [me, me],
   Intermediate: [],
   Advanced: [me],
-  Expert: []
+  Expert: [you]
 }
