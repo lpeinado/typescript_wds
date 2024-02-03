@@ -1,16 +1,12 @@
-type Person = {
-  name: string
-  age: number
+function returnSecond<T>(array:T[]){
+  return array[1]
 }
-const me: Person = {
-  name: 'Jane',
-  age: 25,
-}
+const numArr = [1, 2, 3, 4, 5]
+const strArr = ['a', 'b', 'c', 'd', 'e']
+const boolArr = [true, false, true, false, true]
 
+const resA = returnSecond(numArr)
+const resB = returnSecond(strArr)
+const resC = returnSecond(boolArr)
 
-type Tuple = [string, number| string]
-const tuple: Tuple = ['Jane', 25]
-
-Object.entries(me).forEach(([key, value]: Tuple) => {
-  console.log(`This is a key: ${key}, and this is a value: ${value}`)
-});
+console.log(resA, resB, resC)
