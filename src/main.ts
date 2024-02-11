@@ -1,7 +1,5 @@
-function wait(duration:number){
-  return new Promise<string>(resolve => {
-    setTimeout(() => resolve("hi how are you"), duration)
-  })
+async function wait(){
+  return await fetch("blahblahblah");
 }
 
-wait(2000).then(data => console.log(data.length))
+wait().then(value => console.log(value.json));
