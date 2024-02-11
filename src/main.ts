@@ -1,17 +1,7 @@
-function arrToObj<T>(array:[string, T][]) {
-  let res: {[index: string]: T} = {};
-  array.forEach(([key, value])=>{
-    res[key] = value;
+function wait(duration:number){
+  return new Promise<string>(resolve => {
+    setTimeout(() => resolve("hi how are you"), duration)
   })
-  return res;
 }
 
-
-const input:[string, number | boolean][] = [
-  ['name', 80], 
-  ['age', 40],
-  ['isHandsome', true]
-];
-
-const a = arrToObj(input);
-console.log(a);
+wait(2000).then(data => console.log(data.length))
