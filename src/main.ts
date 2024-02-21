@@ -1,24 +1,19 @@
-type FormInputs = {
-  name: string;
-    email: string;
-    password: string;
-    confirmPassword: string;
+function SimpleFunction(a: string, b:string) {
+  return a.length > b.length;
 }
 
-type FormErrors = Partial<FormInputs>
+type SimpleFunctionType = ReturnType<typeof SimpleFunction>;
 
-function doWithFormErrors(input: FormErrors){
-  console.log(input.name);
+function ComplexFunction() {
+    return {
+    prop1: 'value1', 
+    prop2: 'value2',
+    prop3: 'value3',
+    prop4: 'value4'
+  }
 }
 
+type ComplexFunctionType = ReturnType<typeof ComplexFunction>;
 
-type softType = {
-  name?: string;
-  email?: string;
-}
-
-type somethingStronger = Required<Pick<softType, 'name'>>
-
-function doSomethingWithStrongerType(input: somethingStronger){
-  console.log(input, input.name);
-}
+const a:ComplexFunctionType = ComplexFunction();
+console.log(a)
