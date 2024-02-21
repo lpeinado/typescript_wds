@@ -1,19 +1,6 @@
-type Person = {
-  name: string;
-    age: number;
+async function doSomething() {
+  return 1;
 }
 
-type RealPerson = Readonly<Person>;
-
-const a: RealPerson = {
-  name: 'a',
-    age: 1
-};
-
-const b : Person = {
-  name: 'b',
-    age: 2
-} as const;
-
-b['age']=9;
-a['age']=9;
+type MyType = Awaited<typeof doSomething>;
+type b = Awaited<ReturnType<typeof doSomething>>;
