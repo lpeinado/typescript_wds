@@ -1,19 +1,28 @@
-function SimpleFunction(a: string, b:string) {
-  return a.length > b.length;
+type Person = {
+  name: string;
+    age: number;
 }
+type MyType = Record<string, Person>;
+type MyPersonType = Record<Person['name'], Person>;
 
-type SimpleFunctionType = ReturnType<typeof SimpleFunction>;
-
-function ComplexFunction() {
-    return {
-    prop1: 'value1', 
-    prop2: 'value2',
-    prop3: 'value3',
-    prop4: 'value4'
+const PersonA: MyPersonType = {
+  'Lluís': {
+    name: 'Lluís',
+    age: 32,
   }
-}
+};
 
-type ComplexFunctionType = ReturnType<typeof ComplexFunction>;
-
-const a:ComplexFunctionType = ComplexFunction();
-console.log(a)
+const WrongPerson: MyPersonType = {
+  'Lluís': {
+    name: 'Lluís',
+    rus: 32,
+  },
+  'Lluís2': {
+    name: 'Lluís',
+    plas: 32,
+  },
+  'Sic': {
+    name: 'Lluís',
+    age: 32,  
+  }
+};
