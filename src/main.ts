@@ -1,23 +1,24 @@
-type Todo = {
-  id: number,
-  text: string,
-  status: 'active' | 'completed',
-  completed: boolean
+type FormInputs = {
+  name: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
 }
 
-type newTodo = Pick<Todo, 'text'| 'id'>;
+type FormErrors = Partial<FormInputs>
 
-
-function doSomethingWithTodo(todo: Todo) {
-  console.log(todo.text)
+function doWithFormErrors(input: FormErrors){
+  console.log(input.name);
 }
 
-function doSomethingWithNewTodo(todo: newTodo) {
-  console.log(todo.text)
+
+type softType = {
+  name?: string;
+  email?: string;
 }
 
-type TodoWithoutId = Omit<Todo, 'id'>;
+type somethingStronger = Required<Pick<softType, 'name'>>
 
-function doSomethingWithTodoWithoutId(todo: TodoWithoutId) {
-  console.log(todo.status);
+function doSomethingWithStrongerType(input: somethingStronger){
+  console.log(input, input.name);
 }
