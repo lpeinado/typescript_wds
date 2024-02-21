@@ -2,27 +2,18 @@ type Person = {
   name: string;
     age: number;
 }
-type MyType = Record<string, Person>;
-type MyPersonType = Record<Person['name'], Person>;
 
-const PersonA: MyPersonType = {
-  'Lluís': {
-    name: 'Lluís',
-    age: 32,
-  }
+type RealPerson = Readonly<Person>;
+
+const a: RealPerson = {
+  name: 'a',
+    age: 1
 };
 
-const WrongPerson: MyPersonType = {
-  'Lluís': {
-    name: 'Lluís',
-    rus: 32,
-  },
-  'Lluís2': {
-    name: 'Lluís',
-    plas: 32,
-  },
-  'Sic': {
-    name: 'Lluís',
-    age: 32,  
-  }
-};
+const b : Person = {
+  name: 'b',
+    age: 2
+} as const;
+
+b['age']=9;
+a['age']=9;
