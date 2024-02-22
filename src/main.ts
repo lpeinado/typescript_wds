@@ -4,10 +4,9 @@ type Todo = {
   dueDate: string | Date;
 }
 
-function doSomethingWithTodo(item: Todo){
-  if( item.dueDate instanceof Date){
-    console.log(item.dueDate.getFullYear);
-  }else{
-    return item.dueDate.getDay
-  }
+function handleDescription (item: Todo) {
+  console.log(item.description?.length);
 }
+
+const el = document.querySelector<HTMLFormElement>('.form');
+el?.addEventListener("submit", ()=> {});
