@@ -1,4 +1,13 @@
-function MyFunction(data:unknown){
-  if(data && data instanceof Object && "name" in data && typeof data.name === 'string')
-  console.log (data.name.length);
+type Todo = {
+  name: string;
+  status: boolean;
+  dueDate: string | Date;
 }
+
+const a = {
+  name: 'ras',
+  status: false,
+  dueDate: new Date()
+} satisfies Todo;
+
+console.log(a.dueDate.getDate)
