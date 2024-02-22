@@ -4,9 +4,10 @@ type Todo = {
   dueDate: string | Date;
 }
 
-function handleDescription (item: Todo) {
-  console.log(item.description?.length);
+function withTypeGuard (item: Todo){
+  if (item.dueDate instanceof Date){
+    console.log(item.dueDate.getDay);
+    return
+  }
+  return item.dueDate.length
 }
-
-const el = document.querySelector<HTMLFormElement>('.form');
-el?.addEventListener("submit", ()=> {});
