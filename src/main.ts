@@ -5,8 +5,8 @@ type Todo = {
 }
 
 function doSomethingWithTodo(item: Todo){
-  if(typeof item.dueDate === 'string'){
-    console.log(item.dueDate);
+  if( item.dueDate instanceof Date){
+    console.log(item.dueDate.getFullYear);
   }else{
     return item.dueDate.getDay
   }
