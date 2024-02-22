@@ -1,6 +1,13 @@
-async function doSomething() {
-  return 1;
+type Todo = {
+  description?: string;
+  done: boolean;
+  dueDate: string | Date;
 }
 
-type MyType = Awaited<typeof doSomething>;
-type b = Awaited<ReturnType<typeof doSomething>>;
+function doSomethingWithTodo(item: Todo){
+  if(typeof item.dueDate === 'string'){
+    console.log(item.dueDate);
+  }else{
+    return item.dueDate.getDay
+  }
+}
