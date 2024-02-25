@@ -1,26 +1,9 @@
-type Option = {
-  name: string;
-  value: string;
-  selected?: boolean;
-  sourceObject: {
-    status: string;
-    name: string;
-    closedAt: string;
-  }
+import { addDays } from 'date-fns';
+import { times } from 'lodash';
+
+function myFunction() {
+  const date = new Date();
+  return (addDays(date, 10));
 }
 
-
-function returnOption(): Option {
-  return {
-    name: '',
-    value: '',
-    selected: false,
-    sourceObject: {
-      status: '',
-      name: '',
-      closedAt: '',
-      // @ts-expect-error
-      role: 'admin',
-    }
-  };
-}
+times(100000, myFunction);
