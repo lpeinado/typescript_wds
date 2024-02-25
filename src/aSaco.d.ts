@@ -1,3 +1,5 @@
-declare module 'myLib' {
-  export type rastafarai = (x: number) => void;
+declare global {
+  declare var test: string;
 }
+
+export {}

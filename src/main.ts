@@ -10,3 +10,4 @@ function myFunction() {
 times(100000, myFunction);
 
 rastafarai(9);
+window.test = 8;
