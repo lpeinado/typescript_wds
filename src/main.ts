@@ -1,20 +1,25 @@
-type errorResponse = {
-  status: 'Error';
-  message: string;
-};
-
-type successResponse = {
-  status: 'Success';
-  data: { id: string; name: string; email: string; };
-};
-
-type apiResponse = errorResponse | successResponse;
-
-function handleResponse( response : apiResponse ) {
-  if (response.status === 'Error') {
-    console.log(response.message);
+type Option = {
+  name: string;
+  value: string;
+  selected?: boolean;
+  sourceObject: {
+    status: string;
+    name: string;
+    closedAt: string;
   }
-  if (response.status === 'Success') {
-    console.log(response.data);
-  }
+}
+
+
+function returnOption(): Option {
+  return {
+    name: '',
+    value: '',
+    selected: false,
+    sourceObject: {
+      status: '',
+      name: '',
+      closedAt: '',
+      role: 'admin',
+    }
+  };
 }
