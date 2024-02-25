@@ -19,6 +19,7 @@ function returnOption(): Option {
       status: '',
       name: '',
       closedAt: '',
+      // @ts-ignore
       role: 'admin',
     }
   };
